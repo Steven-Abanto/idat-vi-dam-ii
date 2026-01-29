@@ -13,7 +13,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/ic_drive"
-        />
+    />
 
     <TextView
         android:layout_width="match_parent"
@@ -79,4 +79,38 @@
             android:layout_marginHorizontal="5dp"
             android:layout_gravity="right"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivWeb"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_death_star"
+                />
+
+            <ImageView
+                android:id="@+id/ivTelefono"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_jedi_order"
+                />
+
+            <ImageView
+                android:id="@+id/ivMensaje"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_alien_cow"
+                />
+        </LinearLayout>
+
 </LinearLayout>
