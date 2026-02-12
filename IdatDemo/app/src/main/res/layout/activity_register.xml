@@ -36,6 +36,42 @@
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivFoto"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintWidth_percent="0.5"
+                    app:layout_constraintDimensionRatio="4:3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv2"-->
+<!--                    android:layout_width="120dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:src="@drawable/ic_camera"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/ivFoto"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent" -->
+<!--                    app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv3"-->
+<!--                    android:layout_width="120dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:src="@drawable/ic_camera"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/ivFoto"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/ivFoto"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/ivFoto"/>-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -232,7 +268,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp">
-                
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -251,14 +287,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:paddingHorizontal="10dp"
-                        android:weightSum="5">
+                        android:weightSum="3">
 
                         <RadioButton
                             android:id="@+id/idSexoM"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="M"
+                            android:text="Masculino"
                             android:textSize="15sp"
                             android:textStyle="bold" />
 
@@ -267,13 +303,27 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="F"
+                            android:text="Femenino"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/idSexoN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No binario"
                             android:textSize="15sp"
                             android:textStyle="bold" />
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deseo recibir ofertas (Opcional)"
+                android:layout_marginTop="16dp"/>
 
             <CheckBox
                 android:layout_width="wrap_content"

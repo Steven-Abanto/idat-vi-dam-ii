@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ivWeb : ImageView
     private lateinit var ivTelefono : ImageView
     private lateinit var ivMensaje : ImageView
+    private lateinit var ivDrive : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 //      val tvRegistro : TextView = findViewById(R.id.tvRegistro)
         tvRegistro = findViewById(R.id.tvRegistro)
+        ivDrive = findViewById(R.id.ivDrive)
 
         ivWeb = findViewById(R.id.ivWeb)
         ivTelefono = findViewById(R.id.ivTelefono)
@@ -31,6 +33,11 @@ class MainActivity : AppCompatActivity() {
         ivWeb.setOnClickListener(){
             val intent : Intent = Intent(Intent.ACTION_VIEW)
             intent.setData("https://www.starwars.com/".toUri())
+            startActivity(intent)
+        }
+
+        ivDrive.setOnClickListener(){
+            val intent : Intent = Intent(this, ListaComprasActivity::class.java)
             startActivity(intent)
         }
 
