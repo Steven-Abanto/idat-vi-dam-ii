@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
 class ListaComprasActivity : AppCompatActivity() {
@@ -46,9 +49,47 @@ class ListaComprasActivity : AppCompatActivity() {
                 tietProducto.text?.clear()
             }
             else {
-                Toast.makeText(this,"Ingrese un texto",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Ingrese un producto",Toast.LENGTH_SHORT).show()
             }
         }
+
+        lvCompras.setOnItemClickListener {  _, _, position, _ ->
+            val producto = listaCompras[position]
+            Toast.makeText(this,"Producto seleccionado: $producto", Toast.LENGTH_SHORT).show()
+        }
+
+        lvCompras.setOnItemLongClickListener{ _, _, position, _ ->
+            val producto = listaCompras[position]
+//            listaCompras.removeAt(position)
+//            listAdapter.notifyDataSetChanged()
+//            Toast.makeText(this,"Producto eliminado: $producto", Toast.LENGTH_SHORT).show()
+
+            val dialogView = layoutInflater.inflate(R.layout.modal_opciones,null)
+
+            val tvTitulo = dialogView.findViewById<TextView>(R.id.tvTitulo)
+            tvTitulo.text = "Opciones para $producto"
+
+            val dialog = AlertDialog.Builder(this)
+                .setView(dialogView)
+                .create()
+            dialog.show()
+            true
+
+            val btnCancelar = dialogView.findViewById<MaterialButton>(R.id.mbCancelar)
+            btnCancelar.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            val btnEliminar = dialogView.findViewById<MaterialButton>(R.id.mbEliminar)
+            btnEliminar.setOnClickListener {
+                listaCompras.removeAt(position)
+                listAdapter.notifyDataSetChanged()
+                Toast.makeText(this,"Producto eliminado: $producto", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+            }
+            true
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
