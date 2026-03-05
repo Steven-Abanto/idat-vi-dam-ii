@@ -9,12 +9,29 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/ivDrive"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/ic_drive"
-    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/ivDrive"
+            android:layout_weight="1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_drive"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_weight="1"
+            app:lottie_rawRes="@raw/dogwalking"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="match_parent"

@@ -1,15 +1,17 @@
 package com.example.idatdemo.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.idatdemo.R
 import com.example.idatdemo.entity.Compra
 
-class HistorialAdapter(private val listaHistorial : List<Compra>)
+class HistorialAdapter(private val listaHistorial : List<Compra>, var context : Context)
     : RecyclerView.Adapter<HistorialAdapter.HistorialViewHolder>() {
     inner class HistorialViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val ivFoto : ImageView = itemView.findViewById(R.id.ivFoto)
@@ -35,6 +37,7 @@ class HistorialAdapter(private val listaHistorial : List<Compra>)
         holder.tvId.text = "ID: #${compra.id}"
         holder.tvProducto.text = "Producto: #${compra.producto}"
         holder.tvFecha.text = "Fecha: #${compra.fecha}"
+        Glide.with(context).load(compra.imagen).into(holder.ivFoto)
     }
 
 }
