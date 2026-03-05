@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         ivDrive.setOnClickListener(){
 //            val intent : Intent = Intent(this, ListaComprasActivity::class.java)
-            val intent : Intent = Intent(this, HistorialActivity::class.java)
+//            val intent : Intent = Intent(this, HistorialActivity::class.java)
+            val intent : Intent = Intent(this, InicioActivity::class.java)
             startActivity(intent)
         }
 

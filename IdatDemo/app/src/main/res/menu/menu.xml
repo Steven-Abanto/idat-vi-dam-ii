@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item
+            android:id="@+id/itInicio"
+            android:title="Inicio"
+            android:icon="@drawable/ic_jedi_order"
+            />
+        <item
+            android:id="@+id/itPerfil"
+            android:title="Perfil"
+            android:icon="@drawable/ic_death_star"
+            />
+        <item
+            android:id="@+id/itHistory"
+            android:title="Inicio"
+            android:icon="@drawable/ic_new_republic"
+            />
+
+    </group>
+
+</menu>

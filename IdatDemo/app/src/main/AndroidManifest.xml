@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IdatDemo"
         tools:targetApi="31">
+        <activity
+            android:name=".InicioActivity"
+            android:exported="false" />
         <activity
             android:name=".HistorialActivity"
             android:exported="false" />
